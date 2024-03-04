@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register page</title>
+    <link rel="stylesheet" href="app/scss/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h2>Syrian Digital Cryptocurrency (SDC)</h2>
+    </header>
+    <main class="main">
+      <div class="login">
+        <h1>create new account</h1>
+        <form class="login" action="./app/php/register.php" method="post">
+          <label for="username">username</label>
+          <input type="text" name="username" /> <br>
+          <label for="password">password</label>
+          <input type="password" name="password" /> <br>
+          <input type="submit" name="submit" value="register" />
+        </form>
+        <p>already have an account? <a href="index.html">login here</a></p>
+      </div>
+    </main>
+  </body>
+</html>

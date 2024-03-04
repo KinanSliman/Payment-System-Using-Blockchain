@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login page</title>
+    <link rel="stylesheet" href="app/scss/style.css" />
+  </head>
+  <body>
+
+    <header class="header">
+      <h2>Syrian Digital Cryptocurrency (SDC)</h2>
+    </header>
+    <main class="main">
+      <div class="login">
+        <h1>login to use the system</h1>
+        <form action="./app/php/login.php" method="post">
+          <label for="username">username</label>
+          <input type="text" name="username" /> <br>
+          <label for="password">password</label>
+          <input type="password" name="password" /> <br>
+          <input type="submit" name="submit" value="login" />
+        </form>
+        <p>don't have an account? <a href="register.html">register here</a></p>
+      </div>
+
+      
+    
+
+
+<!--viewing blockchain information -->
+
+<div id="blockchain-info">
+  <h2>Shared Ledger:</h2>
+  <table id="blockchain-table">
+    <tbody id="blockchain-table-body"></tbody>
+  </table>
+</div>
+<script>
+  // Function to format transaction addresses
+  function formatTransactionAddresses(transactions) {
+    const formattedTransactions = transactions.map((transaction) => {
+      const fromAddress = `${transaction.fromAddress}`;
+      //const toAddress = `${transaction.toAddress.substring(0, 6)}...${transaction.toAddress.slice(-6)}`;
+      const toAddress = `${transaction.toAddress}`;
+      const amount = `${transaction.amount}`;
+      const timestamp = `${transaction.timestamp}`;
+      const nonce = `${transaction.nonce}`;
+      const signature = `${transaction.signature}`;
+      return `"fromAddress": "${fromAddress}", "toAddress": "${toAddress}", "amount": "${amount}","timestamp": "${timestamp}","nonce": "${nonce}","signature": "${signature}"`;
+    });
+    return formattedTransactions.join("<br><br>");
+  }
+
+  // Function to update the HTML table with blockchain data
+
+  function updateBlockchainInfo(blocks) {
+  const tableBody = document.getElementById("blockchain-table-body");
+
+  // Clear the table body before populating it with new data
+  tableBody.innerHTML = "";
+
+  // Loop through the blocks and create rows in the table
+  //console.log('type of block is:', typeof blocks);
+  if(typeof blocks=="object"){
+
+  blocks.forEach((block, index) => {
+    // Create a single row for each block
+    const row = document.createElement("tr");
+
+    // Add cells for Block Number
+    const blockNumberHeadingCell = document.createElement("th");
+    const blockNumberDataCell = document.createElement("td");
+    blockNumberHeadingCell.textContent = "Block Number";
+    blockNumberDataCell.textContent = index;
+    row.appendChild(blockNumberHeadingCell);
+    row.appendChild(blockNumberDataCell);
+
+    // Add cells for Timestamp
+    const timestampHeadingCell = document.createElement("th");
+    const timestampDataCell = document.createElement("td");
+    timestampHeadingCell.textContent = "Timestamp";
+    timestampDataCell.textContent = block.timestamp;
+    row.appendChild(timestampHeadingCell);
+    row.appendChild(timestampDataCell);
+
+    // Add cells for Transactions
+    const transactionsHeadingCell = document.createElement("th");
+    const transactionsDataCell = document.createElement("td");
+    transactionsHeadingCell.textContent = "Transactions";
+    transactionsDataCell.innerHTML = formatTransactionAddresses(block.transactions);
+    row.appendChild(transactionsHeadingCell);
+    row.appendChild(transactionsDataCell);
+
+     // Add cells for Nonce
+     const nonceHeadingCell = document.createElement("th");
+    const nonceDataCell = document.createElement("td");
+    nonceHeadingCell.textContent = "Nonce";
+    nonceDataCell.innerHTML = block.nonce;
+    row.appendChild(nonceHeadingCell);
+    row.appendChild(nonceDataCell);
+
+    // Add cells for Previous Hash
+    const previousHashHeadingCell = document.createElement("th");
+    const previousHashDataCell = document.createElement("td");
+    previousHashHeadingCell.textContent = "Previous Hash";
+    previousHashDataCell.textContent = block.previousHash;
+    row.appendChild(previousHashHeadingCell);
+    row.appendChild(previousHashDataCell);
+
+    // Add cells for Hash
+    const hashHeadingCell = document.createElement("th");
+    const hashDataCell = document.createElement("td");
+    hashHeadingCell.textContent = "Hash";
+    hashDataCell.textContent = block.hash;
+    row.appendChild(hashHeadingCell);
+    row.appendChild(hashDataCell);
+
+    // Append the row to the table body
+    tableBody.appendChild(row);
+  });
+}
+}
+
+  // Create a WebSocket connection to the server
+  const socket = new WebSocket("ws://localhost:9003"); // Adjust the server URL as needed
+
+  // Send a message to request blockchain information when the connection is open
+  socket.addEventListener("open", () => {
+    socket.send(JSON.stringify({ command: "getBlocks" }));
+  });
+
+  // Handle messages received from the server
+  socket.addEventListener("message", (message) => {
+    const data = JSON.parse(message.data);
+
+    // Check if the received data contains blockchain information
+    if (data.blocks) {
+      const blocks = data.blocks;
+      // Update the DOM with the received blockchain data
+      updateBlockchainInfo(blocks);
+    }
+
+    // Add more handling for other messages as needed
+  });
+</script>
+
+    </main>
+    <script>
+let hasReloaded = localStorage.getItem('hasReloaded');
+
+if (!hasReloaded) {
+  // Schedule the reload after 10 seconds
+  let reloadTimeout = setTimeout(function() {
+    // Reload the page
+    location.reload();
+
+    // Set the flag in local storage to indicate that the reload has been scheduled
+    localStorage.setItem('hasReloaded', true);
+  }, 3000);
+}
+  </script>
+  </body>
+</html>
