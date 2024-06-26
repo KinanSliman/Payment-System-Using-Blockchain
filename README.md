@@ -13,6 +13,9 @@
 7. **Database Communication:** PHP.
 8. **Main Programming Language:** JavaScript.
 
+### Note:
+ there is a video demo for the blockchain available on youtube `https://www.youtube.com/watch?v=8FD0U1Xxr-c`
+
 ## Running the Blockchain on Your Computer
 
 ### Prerequisites
