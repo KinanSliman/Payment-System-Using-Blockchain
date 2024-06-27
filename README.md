@@ -1,6 +1,7 @@
 # Payment System Using Blockchain Technology
 
 **This is my Master Thesis project, built entirely from scratch with a custom Peer-to-Peer network, a custom wallet, and a custom "SDC" cryptocurrency. The development of this blockchain took around 15 months in total.**
+**I would like to extend my sincere gratitude to Dr. Sira Astour for her invaluable guidance throughout my thesis project.** 
 
 ## Technologies Used
 
