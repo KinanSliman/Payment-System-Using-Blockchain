@@ -72,3 +72,14 @@ Great! You have successfully run the blockchain on your computer and you can now
 
 ### General Dataflow Chart
 ![General Dataflow Chart](./images/general-dataflow-chart.png)
+
+## Get Involved
+
+Your contributions and feedback are welcome! Here’s how you can get involved:
+
+- **Star the Repository:** Show your support by starring this project.
+- **Contribute:** Submit pull requests for bug fixes, improvements, or new features.
+- **Comment:** Share your feedback, suggestions, and questions by opening issues.
+- **Share:** Help spread the word by sharing this project with others.
+
+Thank you for your support!
