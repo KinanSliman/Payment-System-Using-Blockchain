@@ -7,13 +7,15 @@
 ## Technologies Used
 
 1. **Wallet:** BIP39, SHA256, Elliptic Curve Cryptography, and Elliptic Curve Digital Signature Algorithm.
-2. **Consensus Mechanism:** Non-incentivized Proof of Work.
-3. **Peer-to-Peer Network:** Pure unstructured Peer-to-Peer network.
-4. **Communication Between Nodes:** Topic-based publish/subscribe.
-5. **Peer Discovery Mechanism:** Multicast DNS.
-6. **User Interface:** HTML and SCSS.
-7. **Database Communication:** PHP.
-8. **Main Programming Language:** JavaScript.
+2. **Cryptocurrency:** Fixed amount, created within genesis block.
+3. **Consensus Mechanism:** Non-incentivized Proof of Work.
+4. **Peer-to-Peer Network:** Pure unstructured Peer-to-Peer network with "Libp2p nodes"
+5. **Communication Between Nodes:** Topic-based publish/subscribe.
+6. **Communication Between Web App And Peer-TO-Peer Network:** using Bridge Node "a libp2p node with web socket server"
+7. **Peer Discovery Mechanism:** Multicast DNS.
+8. **User Interface:** HTML and SCSS.
+9. **Database Communication:** PHP.
+10. **Main Programming Language:** JavaScript.
 
 ### Note:
  there is a video demo for the blockchain available on youtube `https://www.youtube.com/watch?v=8FD0U1Xxr-c`
