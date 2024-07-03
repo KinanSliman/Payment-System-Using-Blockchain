@@ -43,7 +43,7 @@
 
 **Note:** To adjust the number of starting nodes, modify **line 92** in `fullnodes.mjs` (consult the code for details).
 
-**Note:** Use a small number of nodes since they will all be running on your computer.
+**Note:** Each full node with have its own copy of the ledger.
 
 ### Starting Bridge Node
 
@@ -53,6 +53,15 @@
 2. Run the command: `node bridgenode.mjs`
 
 Now the blockchain is ready to provide its services to users.
+
+### Adding New FullNode TO Join The BLockchain:
+
+**Note:** on order to join the blockchain, the new full node will needs to sync its ledger with the blockchain.
+
+1. Open a third terminal in the project's root directory.
+2. Run the command: `node newFullNode.mjs`
+
+Now the new full node with wait for other nodes to share their blocks, then this node will add them to its own copy of the ledger.
 
 ## Running the Web App
 
