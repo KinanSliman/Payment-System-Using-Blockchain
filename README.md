@@ -11,7 +11,7 @@
 3. **Consensus Mechanism:** Non-incentivized Proof of Work.
 4. **Peer-to-Peer Network:** Pure unstructured Peer-to-Peer network with "Libp2p nodes"
 5. **Communication Between Nodes:** Topic-based publish/subscribe.
-6. **Communication Between Web App And Peer-TO-Peer Network:** using Bridge Node "a libp2p node with web socket server"
+6. **Communication Between Web App And P2P Network:** using Bridge Node "a libp2p node with web socket server"
 7. **Peer Discovery Mechanism:** Multicast DNS.
 8. **User Interface:** HTML and SCSS.
 9. **Database Communication:** PHP.
