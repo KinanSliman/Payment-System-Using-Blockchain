@@ -54,7 +54,7 @@
 
 Now the blockchain is ready to provide its services to users.
 
-### Adding New FullNode TO Join The BLockchain:
+### Adding New FullNode to Join the BLockchain:
 
 **Note:** on order to join the blockchain, the new full node will needs to sync its ledger with the blockchain.
 
