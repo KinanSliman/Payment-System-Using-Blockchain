@@ -7,7 +7,7 @@
 ## Technologies Used
 
 1. **Wallet:** BIP39, SHA256, Elliptic Curve Cryptography, and Elliptic Curve Digital Signature Algorithm.
-2. **Cryptocurrency:** Fixed amount, created within genesis block.
+2. **Cryptocurrency:** Fixed amount, created within genesis block and stored in "Premium Wallet".
 3. **Consensus Mechanism:** Non-incentivized Proof of Work.
 4. **Peer-to-Peer Network:** Pure unstructured Peer-to-Peer network with "Libp2p nodes"
 5. **Communication Between Nodes:** Topic-based publish/subscribe.
